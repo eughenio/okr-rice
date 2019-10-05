@@ -20,3 +20,9 @@ Route::prefix('admin')->group(function () {
 	    return view('admin/welcome_admin');
 	});
 });
+
+Route::prefix('okr')->group(function () {
+	Route::get('/', 'OkrController@index')->name('okr');
+	Route::get('okrCreate', 'OkrController@create')->name('okrCreate');
+	Route::post('okrCreate', 'OkrController@store')->name('okrStore');
+});

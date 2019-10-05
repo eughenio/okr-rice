@@ -36,3 +36,10 @@ services:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
 
+    node:
+      image: node:8-alpine
+      container_name: okr-rice-node
+      working_dir: /application
+      volumes:
+        - .:/application
+
