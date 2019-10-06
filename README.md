@@ -27,3 +27,6 @@ Sistema de OKR com priorização no modelo RICE.
 3. Cadastro de Perfil
 4. Validação dos formulários
 5. Melhorar o Gantt dos projetos
+
+## USING
+`https://docs.dhtmlx.com/gantt/desktop__howtostart_php_laravel.html#step5savingchanges`
