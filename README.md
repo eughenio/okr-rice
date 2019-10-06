@@ -4,9 +4,9 @@
 
 `docker-compose up -d`
 
-`docker exec -it okr-rice-php-fpm composer update`
+`docker-compose exec php-fpm composer update`
 
-`docker exec -it okr-rice-php-fpm php artisan migrate --seed`
+`docker-compose exec php-fpm php artisan migrate --seed`
 
 `docker-compose run node npm install`
 

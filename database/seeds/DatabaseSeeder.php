@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	AreasTableSeeder::class,
         	QuartersTableSeeder::class,
-            ProfilesTableSeeder::class
+            ProfilesTableSeeder::class,
+            // OkrTableSeeder should run after all the others
+            OkrTableSeeder::class,
         ]);
     }
 }
