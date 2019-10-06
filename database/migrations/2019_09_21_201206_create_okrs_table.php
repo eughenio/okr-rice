@@ -34,7 +34,10 @@ class CreateOkrsTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['area_id']);
+        Schema::create('okrs', function (Blueprint $table) {
+            $table->dropForeign(['area_id']);
+        });
+        
         Schema::dropIfExists('okrs');
     }
 }

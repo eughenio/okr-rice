@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
         	AreasTableSeeder::class,
-        	QuartersTableSeeder::class
+        	QuartersTableSeeder::class,
+            ProfilesTableSeeder::class
         ]);
     }
 }
