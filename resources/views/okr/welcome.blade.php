@@ -2,9 +2,7 @@
 
 @section('content')
 
-@foreach($okrs as $okr)
-    {{ $okr }}
-@endforeach
+@component('okr.listOkr', ['okrs' => $okrs])@endcomponent
 
 <a href="{{ route('okrCreate') }}">Cadastrar um OKR</a>
 @endsection

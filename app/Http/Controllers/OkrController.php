@@ -16,7 +16,8 @@ class OkrController extends Controller
      */
     public function index()
     {
-        $okrs = Okr::all();
+        $okrs = Okr::with('area')->get();
+
         return view('okr/welcome', ['okrs' => $okrs]);
     }
 
