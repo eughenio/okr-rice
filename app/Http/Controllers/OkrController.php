@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Okr;
+use App\Area;
 use Illuminate\Database\Eloquent\Collection;
 
 class OkrController extends Controller
@@ -17,7 +18,6 @@ class OkrController extends Controller
     public function index()
     {
         $okrs = Okr::with('area')->get();
-
         return view('okr/welcome', ['okrs' => $okrs]);
     }
 
@@ -28,7 +28,7 @@ class OkrController extends Controller
      */
     public function create()
     {
-        $areas = DB::table('areas')->get();
+        $areas = Area::all();
         return view('okr/formulario', ['areas' => $areas]);
     }
 
@@ -53,7 +53,7 @@ class OkrController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage and redirect to team form.
+     * Store a newly created resource in storage and redirect to Team form.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
