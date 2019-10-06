@@ -19,7 +19,10 @@ class CreateOkrsTable extends Migration
             $table->string('objective');
             $table->string('quarter_year');
             $table->bigInteger('priority');
-            $table->bigInteger('percentage');
+            $table->bigInteger('duration');
+            $table->float('progress');
+            $table->dateTime('start_date');
+            $table->bigInteger('parent')->nullable();
             $table->unsignedBigInteger('area_id');
             $table->timestamps();
 

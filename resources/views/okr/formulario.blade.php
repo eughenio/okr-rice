@@ -18,8 +18,11 @@
 		<label for="priority">Prioridade:</label>
 		<input type="text" name="priority" id="priority" placeholder="Digite Sua Prioridade Aqui!" />
 
-		<label for="percentage">Porcentagem:</label>
-		<input type="text" name="percentage" id="percentage" placeholder="Digite Sua Porcentagem Aqui!" />
+		<label for="progress">Porcentagem:</label>
+		<input type="text" name="progress" id="progress" placeholder="De 0 a 1!" />
+
+		<label for="duration">Duração:</label>
+		<input type="text" name="duration" id="duration" placeholder="Digite Sua Duração Aqui!" />
 
 		<label for="area_id">Área:</label>
 		<select name="area_id" id="area_id">
@@ -27,6 +30,9 @@
 				<option value="{{ $area->id }}">{{ $area->name }}</option>
 			@endforeach
 		</select>
+
+		<label for="start_date">Data de Início:</label>
+		<input type="text" name="start_date" id="start_date" placeholder="Data de Início Aqui!" />
 
 		<input type="submit" value="Cadastrar" />
 		<input type="submit" value="Cadastrar com time" formaction="{{ route('okrStorePlusTeam') }}" />

@@ -13,8 +13,10 @@ $factory->define(Okr::class, function (Faker $faker) {
         'result' => $faker->catchPhrase,
         'objective' => $faker->catchPhrase,
         'quarter_year' => ceil(date("m", time())/3),
-        'priority' => $faker->randomDigitNotNull,
-        'percentage' => $faker->randomDigitNotNull,
+        'priority' => $faker->numberBetween($min = 1, $max = 3),
+        'progress' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 1),
+        'duration' => $faker->numberBetween($min = 1, $max = 30),
+        'start_date' => $faker->dateTimeBetween($startDate = '-1 months', $endDate = 'now', $timezone = null),
         'area_id' => $area,
     ];
 });

@@ -19,8 +19,11 @@ Sistema de OKR com priorização no modelo RICE.
 
 `http://localhost:8080/okr`
 
+`http://localhost:8080/okr/gantt`
+
 ## TO DO
 1. Área Admin inteira
 2. Cadastro de Areas
 3. Cadastro de Perfil
 4. Validação dos formulários
+5. Melhorar o Gantt dos projetos

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Okr extends Model
 {
 	protected $fillable = [
-    	'result', 'objective', 'quarter_year', 'priority', 'percentage', 'area_id',
+    	'result', 'objective', 'quarter_year', 'priority', 'progress', 'start_date', 'area_id', 'duration',
     ];
 
     public function area()
