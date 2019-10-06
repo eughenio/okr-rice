@@ -21,6 +21,12 @@
 	<script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
 	<script type="text/javascript">
 		gantt.config.date_format = "%Y-%m-%d %H:%i:%s";
+		gantt.config.scales = [
+		    {unit: "month", step: 1, format: "%F, %Y"},
+		    {unit: "week", step: 1, format: function (date) {
+		        return "Week #" + gantt.date.getWeek(date);
+		    }}
+		];
 	    gantt.init("gantt_here");
 	    gantt.load("{{ route('ganttData') }}");
 	</script>
