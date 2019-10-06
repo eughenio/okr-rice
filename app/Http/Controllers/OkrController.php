@@ -32,6 +32,14 @@ class OkrController extends Controller
         return view('okr/formulario', ['areas' => $areas]);
     }
 
+    public function storeData(Request $request)
+    {
+        $dataForm = collect($request->request)->toArray();
+        $okr = Okr::create($dataForm);
+
+        return $okr;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -40,10 +48,20 @@ class OkrController extends Controller
      */
     public function store(Request $request)
     {
-        $dataForm = collect($request->request)->toArray();
-        $okr = Okr::create($dataForm);
+        $this->storeData($request);
+        return redirect()->route('okr');
+    }
 
-        return redirect(route('okr'));
+    /**
+     * Store a newly created resource in storage and redirect to team form.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storePlusTeam(Request $request)
+    {
+        $okrId = $this->storeData($request);
+        return redirect()->route('team', ['id' => $okrId->id]);
     }
 
     /**

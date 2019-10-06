@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class Team extends Model
 {
     protected $fillable = [
-        'name',
+        'okr_id', 'profile_id', 'quantity',
     ];
 }

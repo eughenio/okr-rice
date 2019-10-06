@@ -25,4 +25,6 @@ Route::prefix('okr')->group(function () {
 	Route::get('/', 'OkrController@index')->name('okr');
 	Route::get('okrCreate', 'OkrController@create')->name('okrCreate');
 	Route::post('okrCreate', 'OkrController@store')->name('okrStore');
+	Route::post('okrCreatePlusTeam', 'OkrController@storePlusTeam')->name('okrStorePlusTeam');
+	Route::get('team/{id}', 'TeamController@index')->name('team');
 });

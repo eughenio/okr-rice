@@ -1,6 +1,8 @@
 @extends('../template/master')
 
 @section('content')
+<h1>OKRs</h1>
+<hr />
 <form action="{{ route('okrStore') }}" method="post">
 	@csrf
 	<fieldset>
@@ -27,6 +29,7 @@
 		</select>
 
 		<input type="submit" value="Cadastrar" />
+		<input type="submit" value="Cadastrar com time" formaction="{{ route('okrStorePlusTeam') }}" />
 	</fieldset>
 </form>
 
