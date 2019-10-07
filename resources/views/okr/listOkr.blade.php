@@ -9,6 +9,8 @@
   		<div class="card-body card-okr-body card-okr-body-{{ $okr->id }}">
   			<h5 class="card-title card-okr-title card-okr-title-{{ $okr->id }}">{{ $okr->objective }}</h5>
 			Resultado: {{ $okr->result }}
+			<br />
+			<span class="badge badge-primary">{{ $okr->rice }}</span>
 		</div>
     </div>
 </div>

@@ -30,3 +30,5 @@ Sistema de OKR com priorização no modelo RICE.
 
 ## USING
 `https://docs.dhtmlx.com/gantt/desktop__howtostart_php_laravel.html#step5savingchanges`
+
+`https://github.com/DHTMLX/gantt`

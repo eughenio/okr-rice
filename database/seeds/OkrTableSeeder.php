@@ -11,6 +11,6 @@ class OkrTableSeeder extends Seeder
      */
     public function run()
     {
-        $okrs = factory(App\Okr::class, 5)->create();
+        $okrs = factory(App\Okr::class, 15)->create();
     }
 }

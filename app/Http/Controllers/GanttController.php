@@ -48,10 +48,11 @@ class GanttController extends Controller
     {
         $okrs = Okr::all();
         foreach ($okrs as $key => $value) {
-            $okrs[$key]['text'] = $value->result;
+            $okrs[$key]['rice'] = $value->reach * $value->impact * ($value->confidence/100) / $value->effort;
+            $okrs[$key]['text'] = $okrs[$key]['rice']." - ".$value->result;
         }
 
-        $sorted = $okrs->sortBy('start_date')->flatten();
+        $sorted = $okrs->sortByDesc('rice')->flatten();
         $sorted->values()->all();
 
         return response()->json([

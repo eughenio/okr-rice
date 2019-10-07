@@ -18,6 +18,12 @@ class OkrController extends Controller
     public function index()
     {
         $okrs = Okr::with('area')->get();
+        foreach ($okrs as $key => $item) {
+            $okrs[$key]['rice'] = $item->reach * $item->impact * ($item->confidence/100) / $item->effort;
+        }
+
+        $okrs = $okrs->sortByDesc('rice')->values()->all();
+        
         return view('okr/welcome', ['okrs' => $okrs]);
     }
 

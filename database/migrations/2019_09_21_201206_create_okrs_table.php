@@ -24,6 +24,10 @@ class CreateOkrsTable extends Migration
             $table->dateTime('start_date');
             $table->bigInteger('parent')->nullable();
             $table->unsignedBigInteger('area_id');
+            $table->bigInteger('reach');
+            $table->float('impact');
+            $table->bigInteger('confidence');
+            $table->bigInteger('effort');
             $table->timestamps();
 
             $table->foreign('area_id')->references('id')->on('areas');
